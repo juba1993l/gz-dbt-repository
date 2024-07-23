@@ -15,12 +15,12 @@ sources:
     
     - name: raw_gz_sales
       description : sales
-      columns:
-        - name: orders_id
-          description: primary key of the table
-          tests: 
-              - unique
-              - not_null
+    
+      tests: 
+          - unique
+              column_name:"(orders_id || '-' || pdt_id )"
+          - not_null
+              column_name:"(orders_id || '-' || pdt_id )"
     - name: raw_gz_ship
       description : ship
       columns:
