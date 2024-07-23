@@ -17,9 +17,9 @@ sources:
       description : sales
     
       tests: 
-          - unique
+          - unique:
               column_name:"(orders_id || '-' || pdt_id )"
-          - not_null
+          - not_null:
               column_name:"(orders_id || '-' || pdt_id )"
     - name: raw_gz_ship
       description : ship
