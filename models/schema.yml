@@ -15,6 +15,7 @@ sources:
     
     - name: raw_gz_sales
       description : sales
+    
       columns:
         - name: pdt_id
       tests: 
@@ -22,9 +23,9 @@ sources:
             column_name: "(orders_id || '-' || pdt_id )"
         - not_null:
             column_name: "(orders_id || '-' || pdt_id )"
-        - freshness: 
-            warn_after: {days: 90}
-            loaded_at_field: date_date
+        - freshness:
+          warn_after: {count: 90, period: day}
+          loaded_at_field: “CAST(data_date as TIMESTAMP)”
     - name: raw_gz_ship
       description : ship
       columns:
