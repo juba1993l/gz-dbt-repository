@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: gz_raw_data
+    description: mon dataset
+    tables:
+    - name: raw_gz_product
+      description : product
+
+    - name: raw_gz_sales
+      description : sales
+
+    - name: raw_gz_ship
+      description : ship
+
