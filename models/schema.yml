@@ -2,14 +2,29 @@ version: 2
 
 sources:
   - name: gz_raw_data
-    description: mon dataset
+    description: greenweez raw data source
     tables:
-    - name: raw_gz_product
-      description : product
-
-    - name: raw_gz_sales
-      description : sales
-
-    - name: raw_gz_ship
-      description : ship
-
+        - name: raw_gz_product
+          description : product
+          columns:
+          - name: product_id
+            description : "primary key of the table"
+            tests: 
+                - unique
+                - not_null
+        - name: raw_gz_sales
+          description : sales
+          columns:
+            - name: orders_id
+              description: primary key of the table
+              tests: 
+                - unique
+                - not_null
+        - name: raw_gz_ship
+          description : ship
+          columns:
+            - name: orders_id
+              description: primary key of the table
+              tests: 
+                - unique
+                - not_null
