@@ -22,6 +22,9 @@ sources:
             column_name: "(orders_id || '-' || pdt_id )"
         - not_null:
             column_name: "(orders_id || '-' || pdt_id )"
+        - freshness: 
+          warn_after: {days: 90}
+          loaded_at_field: date_date
     - name: raw_gz_ship
       description : ship
       columns:
