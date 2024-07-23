@@ -24,8 +24,8 @@ sources:
         - not_null:
             column_name: "(orders_id || '-' || pdt_id )"
         - freshness:
-          warn_after: {count: 90, period: day}
-          loaded_at_field: “CAST(data_date as TIMESTAMP)”
+            warn_after: {count: 90, period: day}
+            loaded_at_field: “CAST(data_date as TIMESTAMP)”
     - name: raw_gz_ship
       description : ship
       columns:
