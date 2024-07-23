@@ -15,7 +15,8 @@ sources:
     
     - name: raw_gz_sales
       description : sales
-    
+      columns:
+        - name: pdt_id
       tests: 
           - unique:
               column_name:"(orders_id || '-' || pdt_id )"
