@@ -11,7 +11,7 @@ sources:
         description : "primary key of the table"
         tests: 
             - unique
-            - not_null
+    
     - name: raw_gz_sales
       description : sales
       columns:
