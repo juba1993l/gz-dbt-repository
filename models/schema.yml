@@ -34,3 +34,6 @@ sources:
           tests: 
             - unique
             - not_null
+    - name: int_sales_margin
+      description: calcul de la marge
+      
