@@ -1,0 +1,39 @@
+version: 2
+
+sources:
+  - name: gz_raw_data
+    description: greenweez raw data source
+    tables:
+    - name: raw_gz_product
+      description : product
+      columns:
+      - name: products_id
+        description : "primary key of the table"
+        tests: 
+            - unique
+            - not_null
+    
+    - name: raw_gz_sales
+      description : sales
+      freshness:
+        warn_after: {count: 90, period: day}
+      loaded_at_field: "CAST(date_date as TIMESTAMP)"
+      columns:
+        - name: pdt_id
+      tests: 
+        - unique:
+            column_name: "(orders_id || '-' || pdt_id )"
+        - not_null:
+            column_name: "(orders_id || '-' || pdt_id )"
+
+    - name: raw_gz_ship
+      description : ship
+      columns:
+        - name: orders_id
+          description: primary key of the table
+          tests: 
+            - unique
+            - not_null
+    - name: int_sales_margin
+      description: calcul de la marge
+      
